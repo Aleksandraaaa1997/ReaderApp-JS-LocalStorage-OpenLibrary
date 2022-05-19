@@ -1,0 +1,1035 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Kaushan+Script&family=Oswald&display=swap');
+
+/* Common Style */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 62%;
+}
+
+body {
+    margin: 0;
+    font-family: Comfortaa, sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: Kaushan Script, sans-serif;
+    font-size: 8rem;
+    color: rgb(240, 231, 231);
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.blue-text {
+    color: rgba(16, 112, 160, 0.9);
+}
+
+.wrapper {
+    background-color: rgba(159, 197, 214, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 2rem;
+    height: 55rem;
+    width: 46rem;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.popular-buttons {
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+}
+
+.btn {
+    background-color: rgba(90, 146, 172, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    font-size: 1.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    width: 49%;
+}
+
+/* End of Common Style */
+
+/* Navbar */
+#navbar {
+    font-family: Oswald, sans-serif;
+    z-index: 15;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6vh;
+    background-color: rgba(90, 146, 172, 0.6);
+    box-shadow: .2rem .2rem .5rem black;
+}
+
+.navbar-link {
+    font-size: 1.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(240, 231, 231);
+    margin: 0 3rem;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: color .9s;
+}
+
+.navbar-link:hover {
+    color: #333;
+}
+
+.navbar-link::before {
+    content: "";
+    width: 0;
+    height: 0.2rem;
+    background-color: #333;
+    position: absolute;
+    right: -15%;
+    bottom: -.3rem;
+    transition: width .2s;
+}
+
+.navbar-link:hover::before {
+    width: 130%;
+}
+
+/* End of Navbar */
+
+/* Home Section */
+#home {
+    background-image: url(img/home_bg.jpg);
+}
+
+.title-group {
+    flex-direction: column;
+    color: rgb(218, 216, 216);
+}
+
+.first-title {
+    font-weight: 700;
+    letter-spacing: 0.4rem;
+    margin-bottom: 0.1em;
+}
+
+.second-title {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+/* End of Home Section */
+
+/* Popular Section */
+#popular {
+    background-image: url(img/popular_bg.jpg);
+}
+
+.popular-title {
+    color: rgb(240, 231, 231);
+    padding-bottom: 4rem;
+}
+
+.image-container {
+    /* Put display:flex on image-container because I want to images be in row */
+    padding-left: 96rem;
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+img {
+    margin-right: 8rem;
+    margin-left: 8rem;
+    width: 16rem;
+    height: 23rem;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+
+.btn:hover {
+    color: #333;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+/* style right button */
+#right span:after {
+    content: '\21D2';
+    position: absolute;
+    opacity: 0;
+    right: -1rem;
+    transition: 0.4s;
+}
+
+#right:hover span {
+    padding-right: 3rem;
+}
+
+#right:hover span:after {
+    opacity: 1;
+    right: 3;
+}
+
+/* end of style right button */
+
+/* style left button */
+
+#left span:before {
+    content: '\21D0';
+    position: absolute;
+    opacity: 0;
+    top: -0.1rem;
+    right: 3.5rem;
+    transition: 0.4s;
+}
+
+#left:hover span {
+    padding-left: 3.5rem;
+}
+
+#left:hover span:before {
+    opacity: 1;
+    right: 6.5rem;
+}
+
+/* end of left button */
+/* End of Popular Section */
+
+/* Search Book Section */
+#search {
+    background-image: url(img/search_book_bg.jpg);
+}
+
+.search-wrapper {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    margin-top: 2.3rem;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    width: 49%;
+    height: auto;
+}
+
+#input {
+    margin-bottom: 1rem;
+    padding: .7rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+#search-btn {
+    cursor: pointer;
+    border: none;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(90, 146, 172, 0.2);
+}
+
+#search-btn:active {
+    transform: translateY(2px);
+}
+
+#output {
+    text-align: center;
+    margin: 2rem 0;
+    color: rgb(240, 231, 231);
+    font-size: 1.6rem;
+}
+
+.output-tittle {
+    color: rgb(240, 231, 231);
+}
+
+/* End of Search Book Section */
+
+/* Wish List Section */
+#wish-list {
+    background-image: url(img/wish_list_bg.jpg);
+    padding-bottom: 20rem;
+    padding-top: 3rem;
+}
+
+.wish-list-wrapper {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    margin-top: 4.3rem;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    width: 49%;
+    height: auto;
+}
+
+#book-form {
+    flex-direction: column;
+}
+
+.form-group {
+    flex-direction: column;
+}
+
+.label {
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.wish-list-input {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: 44rem;
+    font-size: 1.6rem;
+}
+
+.wish-list-button {
+    margin-top: 1rem;
+}
+
+.wish-list-btn {
+    padding: 0.5rem;
+}
+
+.wish-list-table {
+    width: 42rem;
+    margin-top: 2rem;
+}
+
+th {
+    text-decoration: #333;
+    text-shadow: 0.3rem 0.3rem #333;
+}
+
+/* End of Wish List Section */
+
+/* My Books Section */
+#my-books {
+    background-image: url(img/my_book_bg.jpg);
+    flex-direction: row;
+}
+
+.note-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10rem;
+}
+
+.my-books-title {
+    font-size: 4rem;
+}
+
+.my-books-img {
+    margin-top: 3rem;
+}
+
+img {
+    margin-right: 8rem;
+    margin-left: 8rem;
+    width: 16rem;
+    height: 23rem;
+}
+
+.my-books-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.my-books-btn {
+    margin-top: 1.5rem;
+}
+
+.my-books-btn:hover {
+    color: #333;
+}
+
+.my-books-btn:active {
+    transform: translateY(2px);
+}
+
+#checkbox {
+    accent-color: #b0b4c0;
+}
+
+.note {
+    background-color: #fff;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 4rem;
+    height: 300px;
+    width: 300px;
+}
+
+.tools {
+    background-color: #87cad6;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+.tools button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+textarea {
+    outline: none;
+    font-size: 1.2rem;
+    border: none;
+    height: 300px;
+    width: 100%;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* End of My Books Section */
+
+/* Log-in/Sing in Section */
+#login-singin {
+    background-image: url(img/login_singin_bg.jpg);
+    overflow: hidden;
+}
+
+.login-singin-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.forms {
+    display: flex;
+    align-items: center;
+    height: 630px;
+    width: 100%;
+    transition: height 0.2s;
+}
+
+.form {
+    padding: 12rem;
+    flex-direction: column;
+    width: 50%;
+    transition: margin-left 0.3s ease;
+}
+
+.login {
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: rgba(159, 197, 214, 0.7);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 2rem;
+    height: 450px;
+}
+
+.login-singin-title {
+    position: relative;
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    position: relative;
+    height: 4rem;
+    width: 42rem;
+    margin-top: 3rem;
+}
+
+.input-field input {
+    position: absolute;
+    font-size: 1.7rem;
+    height: 100%;
+    width: 100%;
+    padding: 0 2rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+}
+
+.input-field input:is(:focus, :valid) {
+    border-bottom-color: #333;
+}
+
+.input-field i {
+    position: absolute;
+    padding-right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1.9rem;
+    transition: all 1s ease;
+}
+
+.input-field input:is(:focus, :valid)~i {
+    color: #333;
+}
+
+.icon {
+    left: 0;
+}
+
+.showHide {
+    cursor: pointer;
+    right: 0;
+}
+
+.checkbox-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+#logCheck {
+    accent-color: #b0b4c0;
+}
+
+.text {
+    font-size: 1.5rem;
+    color: rgb(240, 231, 231);
+    text-decoration: none;
+    transition: color 0.4s;
+    font-weight: 700;
+}
+
+.hover-text:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+.login-button {
+    margin-top: 3rem;
+}
+
+.login-button input {
+    border: none;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    color: #333;
+    background-color: rgb(192, 184, 184);
+    transition: all 0.4s;
+}
+
+.login-button input:hover {
+    background-color: rgb(204, 197, 197);
+}
+
+.login-singin {
+    margin-top: 3rem;
+}
+
+.singup {
+    background-color: rgba(159, 197, 214, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 2rem;
+    height: 500px;
+}
+
+.active .login {
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.3s ease, opacity 0.1s ease;
+}
+
+.singup {
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.active .singup {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.active .forms {
+    height: 702px;
+}
+
+/* End of Log-in/Sing in Section */
+
+
+/* Responsive */
+@media(max-width:1200px) {
+
+    /* Navbar Section */
+    .navbar-link {
+        font-size: 1.5rem;
+        margin: 0 2rem;
+        letter-spacing: .2rem;
+    }
+
+    /* End of Navbar Section */
+
+    /* Home Section */
+    .first-title {
+        font-size: 7rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .second-title {
+        font-size: 2.2rem;
+    }
+
+    /* End of Home Section */
+
+    /* Search Book Section */
+    .title {
+        font-size: 6rem;
+    }
+
+    .search-wrapper {
+        font-size: 1.4rem;
+        width: 65%;
+    }
+
+    #input {
+        padding: .7rem;
+        font-size: 1rem;
+    }
+
+    #output {
+        font-size: 1.4rem;
+    }
+
+    /* End of Search Book Section */
+
+    /* Wish Book Section */
+    .wish-list-wrapper {
+        font-size: 1.6rem;
+    }
+
+    .label {
+        font-size: 1.7rem;
+    }
+
+    .wish-list-input {
+        padding: 0.5rem;
+        width: 38rem;
+        font-size: 1.4rem;
+    }
+
+    .wish-list-table {
+        width: 35rem;
+    }
+
+    /* End of Wish Book Section */
+
+    /* My Books Section */
+    .note {
+        height: 200px;
+        width: 200px;
+    }
+
+    textarea {
+        font-size: 1rem;
+        height: 200px;
+    }
+
+    .my-books-wrapper {
+        height: 50rem;
+        width: 40rem;
+    }
+
+    .my-books-title {
+        font-size: 3rem;
+    }
+
+    img {
+        width: 14rem;
+        height: 21rem;
+    }
+
+    .my-books-btn {
+        font-size: 1.5rem;
+        padding: 0.7rem;
+    }
+
+    /* End of My Book Section */
+
+    /* End of Log-in/Sing in Section */
+    .login-singin-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .input-field {
+        height: 3rem;
+        width: 32rem;
+        margin-top: 2rem;
+    }
+
+    .input-field input {
+        font-size: 1.5rem;
+    }
+
+    .input-field i {
+
+        font-size: 1.5rem;
+    }
+
+    .checkbox-text {
+        margin-top: 1.8rem;
+    }
+
+    .text {
+        font-size: 1.3rem;
+
+    }
+
+    .login-button {
+        margin-top: 2.5rem;
+    }
+
+    .login-singin {
+
+        margin-top: 2.5rem;
+    }
+
+    /* End of Log-in/Sing in Section */
+}
+
+@media(max-width:800px) {
+
+    /* Navbar Section */
+    .navbar-link {
+        font-size: 1.2rem;
+        margin: 0 1rem;
+        letter-spacing: .2rem;
+    }
+
+    /* End of Navbar Section */
+
+    /* Home Section */
+    .first-title {
+        font-size: 6rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .second-title {
+        font-size: 1.9rem;
+    }
+
+    /* End of Home Section */
+
+    /* Popular Section */
+    .popular-title {
+        font-size: 6rem;
+    }
+
+    .carousel {
+        height: 55rem;
+        width: 36rem;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+
+    /* End of Popular Section */
+
+    /* Search Book Section */
+    .title {
+        font-size: 5rem;
+    }
+
+    .search-wrapper {
+        font-size: 1.4rem;
+        width: 85%;
+    }
+
+    #input {
+        padding: .5rem;
+        font-size: 1rem;
+    }
+
+    #output {
+        font-size: 1.1rem;
+    }
+
+    /* End of Search Book Section */
+
+    /* Wish Book Section */
+    .wish-list-wrapper {
+        font-size: 1.5rem;
+    }
+
+    .wish-list-first-title {
+        font-size: 6rem;
+    }
+
+    .label {
+        font-size: 1.4rem;
+    }
+
+    .wish-list-input {
+        padding: 0.2rem;
+        width: 28rem;
+        font-size: 1.4rem;
+    }
+
+    .wish-list-table {
+        width: 28rem;
+    }
+
+    /* End of Wish Book Section */
+
+    /* My Books Section */
+    .note {
+        height: 150px;
+        width: 150px;
+    }
+
+    textarea {
+        font-size: 0.6rem;
+        height: 150px;
+    }
+
+    .my-books-wrapper {
+        height: 40rem;
+        width: 30rem;
+    }
+
+    .my-books-title {
+        font-size: 2rem;
+    }
+
+    img {
+        width: 12rem;
+        height: 17rem;
+    }
+
+    .my-books-btn {
+        font-size: 1.3rem;
+        padding: 0.6rem;
+    }
+
+    /* End of My Book Section */
+
+    /* End of Log-in/Sing in Section */
+    .login-singin-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .input-field {
+        height: 3rem;
+        width: 28rem;
+        margin-top: 2rem;
+    }
+
+    .input-field input {
+        font-size: 1.3rem;
+    }
+
+    .input-field i {
+
+        font-size: 1.3rem;
+    }
+
+    .checkbox-text {
+        margin-top: 1.8rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .login-button {
+        margin-top: 2.5rem;
+    }
+
+    .login-singin {
+
+        margin-top: 2.5rem;
+    }
+
+    /* End of Log-in/Sing in Section */
+}
+
+@media(max-width:600px) {
+
+    /* Navbar Section */
+    #navbar {
+        height: 5vh;
+    }
+
+    .navbar-link {
+        font-size: 0.8rem;
+        margin: 0 1rem;
+        letter-spacing: .2rem;
+    }
+
+    /* End of Navbar Section */
+
+    /* Home Section */
+    .first-title {
+        font-size: 5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .second-title {
+        font-size: 1.5rem;
+    }
+
+    /* End of Home Section */
+
+    /* Popular Section */
+    .popular-title {
+        font-size: 4rem;
+    }
+
+    .carousel {
+        height: 45rem;
+        width: 30rem;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    img {
+        width: 16rem;
+        height: 19rem;
+    }
+
+    .buttons-container {
+        margin-top: 3rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    /* End of Popular Section */
+
+    /* Search Book Section */
+    .title {
+        font-size: 4rem;
+    }
+
+    .search-wrapper {
+        font-size: 1.4rem;
+        font-weight: 600;
+        width: 65%;
+    }
+
+    #input {
+        padding: .4rem;
+        font-size: 1rem;
+    }
+
+    #output {
+        font-size: 0.5rem;
+    }
+
+    /* End of Search Book Section */
+
+    /* Wish Book Section */
+    .wish-list-wrapper {
+        font-size: 1.2rem;
+    }
+
+    .wish-list-first-title {
+        font-size: 4rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .wish-list-input {
+        padding: 0.1rem;
+        width: 22rem;
+        font-size: 1.2rem;
+    }
+
+    .wish-list-table {
+        width: 22rem;
+    }
+
+    /* End of Wish Book Section */
+
+    /* My Books Section */
+    .note {
+        height: 100px;
+        width: 100px;
+    }
+
+    textarea {
+        font-size: 0.5rem;
+        height: 100px;
+    }
+
+    .my-books-wrapper {
+        height: 32rem;
+        width: 20rem;
+    }
+
+    .my-books-title {
+        font-size: 1.6rem;
+    }
+
+    img {
+        width: 8rem;
+        height: 11rem;
+    }
+
+    .my-books-btn {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* End of My Book Section */
+}
+
+/* End of Responsive */

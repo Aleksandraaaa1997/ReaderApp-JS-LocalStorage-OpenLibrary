@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reader App</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="center">
+        <a href="#home" class="navbar-link">HOME</a>
+        <a href="#popular" class="navbar-link">POPULAR</a>
+        <a href="#search" class="navbar-link">SEARCH BOOK</a>
+        <a href="#wish-list" class="navbar-link">WISH LIST</a>
+        <a href="#my-books" class="navbar-link">MY BOOKS</a>
+        <a href="#login-singin" class="floatRight navbar-link">LOG IN/SING IN</a>
+    </nav>
+    <!-- End of Navigation -->
+
+    <!-- Home Section -->
+    <section id="home" class="center background">
+        <div class="title-group center">
+            <h1 class="first-title" id="title"></h1>
+            <h2 class="second-title">Reading is a discount ticket to everywhere, Mary Schmich</h2>
+        </div>
+    </section>
+    <!-- End of Home Section -->
+
+    <!-- Popular Section -->
+    <section id="popular" class="background">
+        <div class="carousel center wrapper">
+            <h1 class="popular-title">Popular</h1>
+            <div class="image-container" id="imgs">
+                <img src="img/JS.jpg" alt="">
+                <img src="img/HTML, CSS, JS.jpg" alt="third-image">
+                <img src="img/jQuery.jpg" alt="fourth-image">
+                <img src="img/php.jpg" alt="fifth-image">
+            </div>
+            <div class="buttons-container">
+                <button id="left" class="btn"><span class="popular-buttons">Prev</span> </button>
+                <button id="right" class="btn"> <span class="popular-buttons">Next</span> </button>
+            </div>
+        </div>
+    </section>
+    <!-- End of Popular Section -->
+
+    <!-- Search Book Section-->
+    <section id="search" class="background">
+        <div class="search-wrapper wrapper center">
+            <h1 class="title">Search Book</h1>
+            <input type="text" id="input" placeholder="Search for books">
+            <button type="submit" id="search-btn">
+                <i class="fas fa-search fa-2x"></i>
+            </button>
+            <div id="output" class="books">
+                <h2 class="output-tittle">Search results</h2>
+            </div>
+        </div>
+    </section>
+    <!-- End of Search Book Section-->
+
+    <!-- Wish List Section -->
+    <section id="wish-list" class="center background">
+        <div class="wish-list-wrapper wrapper center">
+            <h1 class="wish-list-first-title"><i class="fas fa-book-open blue-text"></i>Wish<span
+                    class="blue-text">List</span></h1>
+            <form id="book-form center">
+                <div class="form-group center">
+                    <label for="title" class="label">Title</label>
+                    <input type="text" id="input-title" class="wish-list-input">
+                </div>
+                <div class="form-group center">
+                    <label for="author" class="label">Author</label>
+                    <input type="text" id="input-author" class="wish-list-input">
+                </div>
+                <div class="form-group center">
+                    <label for="key" class="label">Key</label>
+                    <input type="text" id="input-key" class="wish-list-input">
+                </div>
+                <div class="wish-list-button center">
+                    <input type="submit" value="Add Book" class="btn wish-list-btn" id="wish-list-btn">
+                </div>
+            </form>
+            <table class="wish-list-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Key</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="book-list">
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- End of Wish List Section -->
+
+    <!-- My Books Section -->
+    <section id="my-books" class="center background">
+        <div class="note-wrapper" id="note-wrapper">
+            <!-- here will be div with class='note' etc, but that we will write in JS -->
+        </div>
+        <div class="my-books-wrapper center wrapper">
+            <h1 class="my-books-title">You are currently reading:</h1>
+            <div class="my-books-img" id="img">
+                <img src="img/JS.jpg" alt="">
+            </div>
+            <div class="my-books-buttons-container center">
+                <button id="my-books-done-btn" class="btn my-books-btn">Done <input id="checkbox" type="checkbox"> </button>
+                <button id="my-books-note-btn" class="my-books-btn btn"> <i class="fas fa-plus"></i> Add Note</button>
+            </div>
+        </div>
+    </section>
+    <!-- End of My Books Section -->
+
+    <!-- Log in/Sing in Section  -->
+    <section id="login-singin" class="center background">
+        <div class="login-singin-wrapper">
+            <div class="forms">
+                <div class="form login center">
+                    <!-- Login Form -->
+                    <h1 class="login-singin-title">Login</h1>
+                    <form>
+                        <div class="input-field">
+                            <input type="text" placeholder="Enter your email" required>
+                            <i class="uil uil-envelope icon"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" class="password" placeholder="Enter your password" required>
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash showHide"></i>
+                        </div>
+                        <div class="checkbox-text">
+                            <div class="check-box-content">
+                                <input type="checkbox" id="logCheck">
+                                <label for="logCheck" class="text">Remember me</label>
+                            </div>
+                            <a href="#login-singin" class="text hover-text">Forgot password?</a>
+                        </div>
+                        <div class="input-field login-button">
+                            <input type="button" value="Login Now">
+                        </div>
+                    </form>
+                    <div class="login-singin">
+                        <span class="text">Not a member?</span>
+                        <a href="#login-singin" class="text singup-link hover-text">Singup now</a>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="form singup center">
+                    <h1 class="login-singin-title">Registration</h1>
+                    <form>
+                        <div class="input-field">
+                            <input type="text" placeholder="Enter your full name" required>
+                            <i class="uil uil-user"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Enter your email" required>
+                            <i class="uil uil-envelope icon"></i>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" class="password" placeholder="Enter your password" required>
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash showHide"></i>
+                        </div>
+                        <div class="checkbox-text">
+                            <div class="check-box-content">
+                                <input type="checkbox" id="logCheck">
+                                <label for="logCheck" class="text">Remember me</label>
+                            </div>
+                            <a href="#login-singin" class="text hover-text">Forgot password?</a>
+                        </div>
+                        <div class="input-field login-button">
+                            <input type="button" value="Login Now">
+                        </div>
+                    </form>
+                    <div class="login-singin">
+                        <span class="text">Not a member?</span>
+                        <a href="#login-singin" class="text login-link hover-text">Singup now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Log in/Sing in Section -->
+
+    <!-- Bootrstrap script tag-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <!--Script -->
+    <script src="script.js"></script>
+    <!-- Fontawesome script tag -->
+    <script src="https://kit.fontawesome.com/e11ee03e8d.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
